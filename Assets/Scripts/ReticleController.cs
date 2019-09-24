@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIController : MonoBehaviour
+public class ReticleController : MonoBehaviour
 {
 
     public Texture2D crosshairImage;
