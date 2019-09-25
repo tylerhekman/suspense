@@ -8,5 +8,6 @@ public class LoadGridOnClick : MonoBehaviour
     public void LoadGrid()
     {
         SceneManager.LoadScene(1);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
