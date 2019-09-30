@@ -22,19 +22,18 @@ public class CameraController : MonoBehaviour
     private float verticalSensitivityDown = 0.5f;
     private float verticalSensitivityUp;
 
-    private float maxVerticalSensitivityUp = 16;
+    private float maxVerticalSensitivityUp = 1;
 
     void Start()
     {
         verticalSensitivityUp = verticalSensitivityDown * 2.0f;
-        maxVerticalSensitivityUp = 0;
     }
 
     void Update()
     {
         angle -= Input.GetAxis("Mouse X") * rotationalSensitivity;
 
-        float dyUp = Mathf.Clamp((Input.GetAxis("Mouse Y") * Mathf.Abs(Input.GetAxis("Mouse Y"))) * verticalSensitivityUp, -32.0f, 32.0f);
+        float dyUp = Mathf.Clamp((Input.GetAxis("Mouse Y") * Mathf.Abs(Input.GetAxis("Mouse Y"))) * verticalSensitivityUp, -maxVerticalSensitivityUp, maxVerticalSensitivityUp);
 
         if (cameraHeight == 0.1f && backgroundHeightTracker <= 0)
         {
