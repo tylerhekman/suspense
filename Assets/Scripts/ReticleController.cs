@@ -17,14 +17,4 @@ public class ReticleController : MonoBehaviour
         float yMin = (Screen.height / 2) - (adjustedReticleHeight / 2);
         GUI.DrawTexture(new Rect(xMin, yMin, adjustedReticleWidth, adjustedReticleHeight), crosshairImage);
     }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }

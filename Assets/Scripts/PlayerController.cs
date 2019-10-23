@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public CharacterController characterController;
-    public new Camera camera;
+    public Camera mainCamera;
 
     public float speed = 6.0f;
     public float airControlModifier = 5.0f;
@@ -31,10 +31,10 @@ public class PlayerController : MonoBehaviour
             xMoveJumpSnapshot = 0;
             zMoveJumpSnapshot = 0;
 
-            Vector3 cameraPosition = camera.transform.position;
+            Vector3 cameraPosition = mainCamera.transform.position;
 
-            float moveDirectionMedial = this.transform.position.x - camera.transform.position.x;
-            float moveDirectionLateral = this.transform.position.z - camera.transform.position.z;
+            float moveDirectionMedial = this.transform.position.x - mainCamera.transform.position.x;
+            float moveDirectionLateral = this.transform.position.z - mainCamera.transform.position.z;
 
             Vector2 moveDirectionVector = new Vector2(moveDirectionMedial, moveDirectionLateral);
             Vector2 normalizedMoveDirectionVector = moveDirectionVector.normalized;
@@ -51,10 +51,10 @@ public class PlayerController : MonoBehaviour
             }
         }
         else {
-            Vector3 cameraPosition = camera.transform.position;
+            Vector3 cameraPosition = mainCamera.transform.position;
 
-            float moveDirectionMedial = this.transform.position.x - camera.transform.position.x;
-            float moveDirectionLateral = this.transform.position.z - camera.transform.position.z;
+            float moveDirectionMedial = this.transform.position.x - mainCamera.transform.position.x;
+            float moveDirectionLateral = this.transform.position.z - mainCamera.transform.position.z;
 
             Vector2 moveDirectionVector = new Vector2(moveDirectionMedial, moveDirectionLateral);
             Vector2 normalizedMoveDirectionVector = moveDirectionVector.normalized;

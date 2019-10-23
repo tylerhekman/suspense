@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraTargetController : MonoBehaviour
 {
 
-    public new Camera camera;
+    public Camera mainCamera;
     public GameObject player;
 
     public float cameraTargetHeightModifier = .4f;
@@ -29,10 +29,10 @@ public class CameraTargetController : MonoBehaviour
 
     void Update()
     {
-        Vector3 cameraPosition = camera.transform.position;
+        Vector3 cameraPosition = mainCamera.transform.position;
 
-        float moveDirectionMedial = player.transform.position.x - camera.transform.position.x;
-        float moveDirectionLateral = player.transform.position.z - camera.transform.position.z;
+        float moveDirectionMedial = player.transform.position.x - mainCamera.transform.position.x;
+        float moveDirectionLateral = player.transform.position.z - mainCamera.transform.position.z;
 
         Vector2 moveDirectionVector = new Vector2(moveDirectionMedial, moveDirectionLateral);
         Vector2 normalizedMoveDirectionVector = moveDirectionVector.normalized;
@@ -43,10 +43,5 @@ public class CameraTargetController : MonoBehaviour
             player.transform.position.y + cameraTargetHeightModifier,
             player.transform.position.z + perpendicularVector.y * cameraTargetOffset
         );
-    }
-
-    void LateUpdate()
-    {
-
     }
 }
