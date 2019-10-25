@@ -30,13 +30,13 @@ public class FiringController: MonoBehaviour
             if (Physics.Raycast(ray, out hit)) {
                 hitPosition = hit.point;
                 hitObjectName = hit.collider.gameObject.name;
-            }
 
-            if (hitObjectName == "Ground") {
-                print(hitPosition);
-                Vector3 flooredHitPosition = mapVector3(hitPosition, x => Mathf.Floor(x));
-                Instantiate(prefabCube, mapVector3(flooredHitPosition, value => value + .5f), Quaternion.identity);
-            }  
+                if (hitObjectName == "Ground") {
+                    print(hitPosition);
+                    Vector3 flooredHitPosition = mapVector3(hitPosition, x => Mathf.Floor(x));
+                    Instantiate(prefabCube, mapVector3(flooredHitPosition, value => value + .5f), Quaternion.identity);
+                }
+            }
         }
     }
 }
