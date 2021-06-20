@@ -31,8 +31,6 @@ public class PlayerController : MonoBehaviour
             xMoveJumpSnapshot = 0;
             zMoveJumpSnapshot = 0;
 
-            Vector3 cameraPosition = mainCamera.transform.position;
-
             float moveDirectionMedial = this.transform.position.x - mainCamera.transform.position.x;
             float moveDirectionLateral = this.transform.position.z - mainCamera.transform.position.z;
 
@@ -51,8 +49,6 @@ public class PlayerController : MonoBehaviour
             }
         }
         else {
-            Vector3 cameraPosition = mainCamera.transform.position;
-
             float moveDirectionMedial = this.transform.position.x - mainCamera.transform.position.x;
             float moveDirectionLateral = this.transform.position.z - mainCamera.transform.position.z;
 
