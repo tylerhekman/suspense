@@ -38,5 +38,15 @@ public class FiringController: MonoBehaviour
                 }
             }
         }
+
+        if(Input.GetMouseButtonDown(1)) {
+            if(Physics.Raycast(ray, out hit)) {
+                GameObject hitObject = hit.collider.gameObject;
+                print(hitObject.tag);
+                if(hitObject.tag == "Cube") {
+                    Destroy(hitObject);
+                }
+            }
+        }
     }
 }
